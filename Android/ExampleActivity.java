@@ -1,6 +1,6 @@
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-import android.R.attr.key
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.R.attr.key;
 
 /*
  * MIT License
@@ -26,22 +26,24 @@ import android.R.attr.key
  * SOFTWARE.
  */
 
-class MainActivity : AppCompatActivity() {
+public class MainActivity extends AppCompatActivity {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        val plainText = "this is my plain text"
-        val key = "your key"
+        String plainText = "this is my plain text";
+        String key = "your key";
 
-        val cryptLib = CryptLib()
+        CryptLib cryptLib = new CryptLib();
 
-        val cipherText = cryptLib.encryptPlainTextWithRandomIV(plainText, key)
-        println("cipherText $cipherText")
+        String cipherText = cryptLib.encryptPlainTextWithRandomIV(plainText, key);
+        System.out.println("cipherText $cipherText");
 
-        val decryptedString = cryptLib.decryptCipherTextWithRandomIV(cipherText, key)
-        println("decryptedString $decryptedString")
+        String decryptedString = cryptLib.decryptCipherTextWithRandomIV(cipherText, key);
+        System.out.println("decryptedString $decryptedString");
+        k
         
     }
 }
